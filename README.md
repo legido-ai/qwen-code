@@ -8,6 +8,58 @@
 
 </div>
 
+## Table of Contents
+
+- [About This Project](#about-this-project)
+- [💡 Free Options Available](#-free-options-available)
+  - [🔥 Qwen OAuth (Recommended)](#-qwen-oauth-recommended)
+  - [🌏 Regional Free Tiers](#-regional-free-tiers)
+- [Key Features](#key-features)
+- [Installation](#installation)
+  - [Prerequisites](#prerequisites)
+  - [Install from npm](#install-from-npm)
+  - [Install from source](#install-from-source)
+  - [Install globally with Homebrew (macOS/Linux)](#install-globally-with-homebrew-macoslinux)
+- [Quick Start](#quick-start)
+  - [Session Management](#session-management)
+    - [Configure Session Token Limit](#configure-session-token-limit)
+    - [Session Commands](#session-commands)
+  - [Vision Model Configuration](#vision-model-configuration)
+    - [Skip the Switch Dialog (Optional)](#skip-the-switch-dialog-optional)
+    - [Command Line Override](#command-line-override)
+    - [Disable Vision Models (Optional)](#disable-vision-models-optional)
+- [Authorization](#authorization)
+  - [1. Qwen OAuth (🚀 Recommended - Start in 30 seconds)](#1-qwen-oauth--recommended---start-in-30-seconds)
+  - [2. OpenAI-Compatible API](#2-openai-compatible-api)
+    - [Configuration Methods](#configuration-methods)
+    - [API Provider Options](#api-provider-options)
+- [🦙 Ollama Local Inference (Private & Offline)](#-ollama-local-inference-private--offline)
+  - [Setup](#setup)
+  - [Configuration](#configuration)
+  - [Benefits](#benefits)
+  - [Limitations](#limitations)
+  - [Example Usage](#example-usage)
+- [Usage Examples](#usage-examples)
+  - [🔍 Explore Codebases](#-explore-codebases)
+  - [💻 Code Development](#-code-development)
+  - [🔄 Automate Workflows](#-automate-workflows)
+  - [🐛 Debugging & Analysis](#-debugging--analysis)
+- [Popular Tasks](#popular-tasks)
+  - [📚 Understand New Codebases](#-understand-new-codebases)
+  - [🔨 Code Refactoring & Optimization](#-code-refactoring--optimization)
+  - [📝 Documentation & Testing](#-documentation--testing)
+  - [🚀 Development Acceleration](#-development-acceleration)
+- [Commands & Shortcuts](#commands--shortcuts)
+  - [Session Commands](#session-commands-1)
+  - [Keyboard Shortcuts](#keyboard-shortcuts)
+- [Benchmark Results](#benchmark-results)
+  - [Terminal-Bench Performance](#terminal-bench-performance)
+- [Development & Contributing](#development--contributing)
+- [Troubleshooting](#troubleshooting)
+- [Acknowledgments](#acknowledgments)
+- [License](#license)
+- [Star History](#star-history)
+
 ## About This Project
 
 This project is an enhanced version of the original [QwenLM/qwen-code](https://github.com/QwenLM/qwen-code) repository with added Ollama support for local inference. The original Qwen Code provides AI-powered command-line workflow tools for developers.
@@ -236,7 +288,7 @@ Use API keys for OpenAI or other compatible providers:
 **API Provider Options**
 
 > ⚠️ **Regional Notice:**
->
+
 > - **Mainland China**: Use Alibaba Cloud Bailian or ModelScope
 > - **International**: Use Alibaba Cloud ModelStudio or OpenRouter
 
