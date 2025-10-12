@@ -28,7 +28,7 @@ describe('OllamaOpenAICompatibleProvider', () => {
   it('should create an instance', () => {
     const provider = new OllamaOpenAICompatibleProvider(
       mockConfig,
-      mockCliConfig
+      mockCliConfig,
     );
     expect(provider).toBeInstanceOf(OllamaOpenAICompatibleProvider);
   });
@@ -36,7 +36,7 @@ describe('OllamaOpenAICompatibleProvider', () => {
   it('should build headers correctly', () => {
     const provider = new OllamaOpenAICompatibleProvider(
       mockConfig,
-      mockCliConfig
+      mockCliConfig,
     );
     const headers = provider.buildHeaders();
     expect(headers['User-Agent']).toContain('QwenCode/0.0.14');
@@ -46,7 +46,7 @@ describe('OllamaOpenAICompatibleProvider', () => {
     delete mockConfig.baseUrl; // Remove baseUrl to test default
     const provider = new OllamaOpenAICompatibleProvider(
       mockConfig,
-      mockCliConfig
+      mockCliConfig,
     );
     const client = provider.buildClient();
     // The client's baseURL should be the default Ollama URL
@@ -57,7 +57,7 @@ describe('OllamaOpenAICompatibleProvider', () => {
     mockConfig.baseUrl = 'http://my-ollama.local:11434/v1';
     const provider = new OllamaOpenAICompatibleProvider(
       mockConfig,
-      mockCliConfig
+      mockCliConfig,
     );
     const client = provider.buildClient();
     expect(client.baseURL).toBe('http://my-ollama.local:11434/v1');
@@ -67,30 +67,38 @@ describe('OllamaOpenAICompatibleProvider', () => {
     process.env['OLLAMA_MODEL'] = 'qwen2:7b';
     const provider = new OllamaOpenAICompatibleProvider(
       mockConfig,
-      mockCliConfig
+      mockCliConfig,
     );
-    const originalRequest: OpenAI.Chat.ChatCompletionCreateParamsNonStreaming = {
-      model: 'gpt-4',
-      messages: [{ role: 'user', content: 'Hello' }],
-      temperature: 0.7,
-      stream: false,
-    };
-    const modifiedRequest = provider.buildRequest(originalRequest, 'test-prompt-id');
+    const originalRequest: OpenAI.Chat.ChatCompletionCreateParamsNonStreaming =
+      {
+        model: 'gpt-4',
+        messages: [{ role: 'user', content: 'Hello' }],
+        temperature: 0.7,
+        stream: false,
+      };
+    const modifiedRequest = provider.buildRequest(
+      originalRequest,
+      'test-prompt-id',
+    );
     expect(modifiedRequest.model).toBe('qwen2:7b');
   });
 
   it('should use default model when OLLAMA_MODEL is not set', () => {
     const provider = new OllamaOpenAICompatibleProvider(
       mockConfig,
-      mockCliConfig
+      mockCliConfig,
     );
-    const originalRequest: OpenAI.Chat.ChatCompletionCreateParamsNonStreaming = {
-      model: 'gpt-4',
-      messages: [{ role: 'user', content: 'Hello' }],
-      temperature: 0.7,
-      stream: false,
-    };
-    const modifiedRequest = provider.buildRequest(originalRequest, 'test-prompt-id');
+    const originalRequest: OpenAI.Chat.ChatCompletionCreateParamsNonStreaming =
+      {
+        model: 'gpt-4',
+        messages: [{ role: 'user', content: 'Hello' }],
+        temperature: 0.7,
+        stream: false,
+      };
+    const modifiedRequest = provider.buildRequest(
+      originalRequest,
+      'test-prompt-id',
+    );
     expect(modifiedRequest.model).toBe('qwen:0.5b'); // Default model
   });
 

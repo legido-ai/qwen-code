@@ -294,10 +294,11 @@ Run Qwen Code with your own locally hosted models using [Ollama](https://ollama.
 1. **Install Ollama** - Follow the [official installation guide](https://github.com/ollama/ollama)
 
 2. **Pull a Qwen model** - Download a Qwen model compatible with Ollama:
+
    ```bash
    # Pull the recommended Qwen3-Coder model
    ollama pull qwen3coder
-   
+
    # Or pull other Qwen models
    ollama pull qwen2:7b
    ollama pull qwen:7b
@@ -333,14 +334,14 @@ OLLAMA_MODEL=qwen3coder
 ✅ **Zero API Costs** - No monthly fees or usage quotas  
 ✅ **Full Control** - Customize models and parameters as needed  
 ✅ **Enterprise Friendly** - Ideal for organizations with strict data policies  
-✅ **Always Available** - No rate limits or service outages  
+✅ **Always Available** - No rate limits or service outages
 
 ### Limitations
 
 ⚠️ **Hardware Requirements** - Requires sufficient RAM/CPU/GPU resources  
 ⚠️ **Slower Response** - Depends on your hardware specifications  
 ⚠️ **Model Size Limits** - Larger models require more system resources  
-⚠️ **Initial Setup** - Requires local installation and model downloads  
+⚠️ **Initial Setup** - Requires local installation and model downloads
 
 ### Example Usage
 
