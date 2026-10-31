@@ -83,6 +83,6 @@
     "@qwen-code/qwen-code-test-utils": "file:../test-utils"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22.23.4"
   }
 }

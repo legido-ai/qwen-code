@@ -1,5 +1,5 @@
 # Build stage
-FROM docker.io/library/node:20-slim AS builder
+FROM docker.io/library/node:24.22.1-slim AS builder
 
 # Install build dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -26,7 +26,7 @@ RUN npm ci \
   && npm pack -w @qwen-code/qwen-code-core --pack-destination ./packages/core/dist
 
 # Runtime stage
-FROM docker.io/library/node:20-slim
+FROM docker.io/library/node:24.22.1-slim
 
 ARG SANDBOX_NAME="qwen-code-sandbox"
 ARG CLI_VERSION_ARG
